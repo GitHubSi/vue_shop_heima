@@ -1,6 +1,20 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import './plugins/element.js'
+import Element from 'element-ui'
+
+// 导入全局样式表
+import './assets/css/global.css'
+
+// 每一个组件都可以使用this.$http访问到axios
+import axios from 'axios'
+// 设置请求的根路径
+axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
+
+Vue.prototype.$http = axios
+
+Vue.use(Element)
 
 Vue.config.productionTip = false
 
